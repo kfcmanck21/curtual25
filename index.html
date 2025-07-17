@@ -1,56 +1,45 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025 남부 문화다양성교육 교원 역량강화 워크숍</title>
-    
+    <title>2025 남부 다·더·함 문화다양성 교사 연수</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
-        /* 기본 폰트 및 텍스트 색상 설정 */
-        html {
-            scroll-behavior: smooth;
-        }
         body {
-            font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-            color: #1e3a8a; /* 기본 군청색 */
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F0F9FF; /* Very light sky blue background */
+            color: #1e3a8a; /* Default text color: 군청색 (Indigo-900) */
         }
-        /* Tailwind CSS 커스텀 클래스 */
-        .highlight-box {
-            @apply bg-orange-50 border border-orange-200 rounded-xl p-6 shadow-sm;
-        }
-        .info-card {
-            @apply bg-white p-6 rounded-lg shadow-md border border-gray-200;
-        }
-        h2 {
-            @apply text-3xl font-bold text-teal-700 mt-20 mb-8 pb-3 border-b-2 border-teal-200;
-        }
-        h3 {
-            @apply text-xl font-bold text-teal-600 mt-8 mb-4;
-        }
-        .section-anchor {
-            scroll-margin-top: 80px; /* 네비게이션 바 높이만큼 여백 */
+        .emphasis-box {
+            background-color: #FFF7ED; /* Orange-50 */
+            border-left: 4px solid #F97316; /* Orange-500 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
     </style>
 </head>
 <body class="bg-sky-50">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-md">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <nav id="navbar" class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-3">
-                    <span class="text-2xl">🌍</span>
-                    <span class="text-lg font-bold text-teal-800">문화다양성 교원 워크숍</span>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-teal-600">🌐 다·더·함 문화다양성 연수</span>
+                    </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-2">
-                    <ul id="nav-menu" class="flex space-x-2 text-sm font-semibold">
-                        </ul>
+                <div class="hidden md:block">
+                    <div id="nav-links" class="ml-10 flex items-baseline space-x-4">
+                        </div>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" class="bg-sky-100 inline-flex items-center justify-center p-2 rounded-md text-teal-600 hover:text-white hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-100 focus:ring-white">
                         <span class="sr-only">메뉴 열기</span>
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -59,278 +48,221 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <ul id="mobile-nav-menu" class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                 </ul>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div id="mobile-nav-links" class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                </div>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         
-        <header class="text-center my-12">
-            <p class="text-orange-500 font-semibold tracking-wider">2025 남부 교육지원청</p>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mt-2 leading-tight">문화다양성교육 교원 역량강화<br>워크숍 운영 계획</h1>
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight">2025 남부 다·더·함 문화다양성 교사 역량 강화</h1>
+            <p class="mt-4 text-xl text-slate-600">교사 연수 실습 예시 계획안 5가지</p>
         </header>
-
-        <section id="purpose" class="section-anchor">
-            <h2 class="flex items-center"><span class="mr-3 text-4xl">🚀</span>추진 목적</h2>
-            <div class="highlight-box">
-                <p class="text-lg leading-relaxed">
-                    본 연수는 교원들이 다양한 문화의 가치를 이해하고 존중하며, 서로 다른 문화적 배경을 가진 사람들과의 <strong class="font-bold text-teal-600">소통과 협력 역량을 신장</strong>하기 위한 '남부 다·더·함 문화다양성교육'의 일환으로 기획되었습니다. 이를 통해 교원의 문화다양성 교육에 대한 이해도를 제고하고, <strong class="font-bold text-teal-600">2022 개정 교육과정 연계를 통한 구체적인 실천 방안</strong>을 탐색하며, 교원 간의 의견 공유 및 수업 사례 나눔을 활성화하여 문화다양성 교육 역량을 강화하는 것을 목적으로 합니다.
-                </p>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-teal-700 mb-4">🎯 공통 목표 및 안내</h2>
+            <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                교사들이 문화다양성 교육의 필요성과 개념을 이해하고, 학교 교육과정에 연계한 실제 수업 사례를 탐색하며, 동료 교원과의 소통을 통해 문화다양성 교육 역량을 강화합니다.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-600">
+                <div class="bg-sky-50 p-4 rounded-lg flex items-center"><span class="text-2xl mr-3">🗓️</span> <strong>공통 일시:</strong> 2025. X. X. (14:30 ~ 16:30)</div>
+                <div class="bg-sky-50 p-4 rounded-lg flex items-center"><span class="text-2xl mr-3">🏫</span> <strong>공통 장소:</strong> 학교 내 스마트 교실 또는 연수실</div>
             </div>
-        </section>
+        </div>
 
-        <section id="basis" class="section-anchor">
-            <h2 class="flex items-center"><span class="mr-3 text-4xl">⚖️</span>추진 근거</h2>
-            <ul class="space-y-3 bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                <li class="flex items-start">
-                    <svg class="flex-shrink-0 h-6 w-6 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong>「문화다양성의 보호와 증진에 관한 법률」</strong> 제13조(문화다양성 보호와 증진 교육)</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="flex-shrink-0 h-6 w-6 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong>「초중등교육법」</strong> 제28조의 2(다문화학생 등에 대한 교육지원)</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="flex-shrink-0 h-6 w-6 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong>2025 서울교육주요업무 1-3-3.</strong> 다문화교육 및 다문화학생 지원</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="flex-shrink-0 h-6 w-6 text-teal-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span><strong>2025 남부 주요업무실행계획 중점과제_포용적인 문화다양성 교육 지원</strong></span>
-                </li>
-            </ul>
-        </section>
+        <div id="accordion-container" class="space-y-6">
 
-        <section id="overview" class="section-anchor">
-            <h2 class="flex items-center"><span class="mr-3 text-4xl">🗓️</span>연수 개요</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="info-card">
-                    <h3 class="font-bold text-lg text-slate-800 border-b pb-2 mb-3 flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>연수명</h3>
-                    <p class="text-base">문화다양성 감수성 증진 및 2022 개정 교육과정 연계 수업 실천 워크숍</p>
+            <section id="plan1" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button class="accordion-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-2xl font-bold text-teal-800">🌱 계획안 1: 문화다양성 기초 이해 및 학교 교육과정 연계 방안 탐색</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div class="p-6 pt-0">
+                        <h3 class="text-xl font-semibold text-orange-600 mb-6">"다름을 이해하고 함께 성장하는 문화다양성 교육의 시작"</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🕒</span><div><strong>14:30~15:00 (30분): 문화다양성 개념 알기 강의</strong><p class="text-slate-600 mt-1">「문화다양성 보호와 증진 법률」 정의, 이주배경학생 증가 현황 등 시대적 요구를 공유하고 교육 목표를 소개합니다.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">👩‍🏫</span><div><strong>15:00~15:40 (40분): 학교 교육과정 연계 사례 나눔 및 실습</strong><p class="text-slate-600 mt-1">'문화다양성 기반 독서교육' 등 실제 사례를 소개하고, 소그룹별 아이디어 브레인스토밍 및 발표를 진행합니다.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">💬</span><div><strong>15:40~16:20 (40분): 교원 의견 나누기 및 토론</strong>
+                                <div class="emphasis-box">
+                                    <span class="text-2xl">💡</span>
+                                    <p class="font-semibold text-slate-800">'다름을 존중하는 학교 공동체 문화 조성'을 위한 교사의 역할과 현장 활성화 방안에 대해 자유롭게 토론합니다.</p>
+                                </div>
+                            </div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🙋</span><div><strong>16:20~16:30 (10분): 질의응답 및 마무리</strong></div></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3 class="font-bold text-lg text-slate-800 border-b pb-2 mb-3 flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>일시</h3>
-                    <p class="text-base"><strong class="text-orange-600">2025년 [월] [일] (요일) 14:30 ~ 16:30</strong> (총 2시간)</p>
-                </div>
-                <div class="info-card">
-                    <h3 class="font-bold text-lg text-slate-800 border-b pb-2 mb-3 flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>장소</h3>
-                    <p class="text-base">[가산디지털단지점 앤드스페이스]와 같은 연수 전문 공간 또는 교육지원청 연수실 등</p>
-                </div>
-                <div class="info-card">
-                    <h3 class="font-bold text-lg text-slate-800 border-b pb-2 mb-3 flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>대상</h3>
-                    <p class="text-base">관내 초·중학교 문화다양성 교육 관심 교원 및 다더함 문화다양성교육 지원단</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="details" class="section-anchor">
-            <h2 class="flex items-center"><span class="mr-3 text-4xl">📚</span>세부 연수 내용</h2>
+            <section id="plan2" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button class="accordion-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-2xl font-bold text-teal-800">🤖 계획안 2: 독서와 AI·디지털을 활용한 문화다양성 수업 설계</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div class="p-6 pt-0">
+                        <h3 class="text-xl font-semibold text-orange-600 mb-6">"디지털 시대, 다문화 감수성을 키우는 스마트 교육"</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🌐</span><div><strong>14:30~15:00 (30분): 문화다양성의 다양한 발현 양상 이해</strong><p class="text-slate-600 mt-1">세대, 젠더, 소수자, 미디어, 라이프스타일 등 문화다양성의 요인과 발현 영역을 심층 탐구합니다.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">💻</span><div><strong>15:00~15:40 (40분): 독서교육 및 AI·디지털 연계 수업 실습</strong><p class="text-slate-600 mt-1">'질문이 있는 서울형 토론 2.0' 수업 모델을 시연하고, AI 도구(통번역, 아트봉봉 등) 활용 사례를 체험합니다.</p>
+                                <div class="emphasis-box">
+                                    <span class="text-2xl">💡</span>
+                                    <p class="font-semibold text-slate-800">'다양한 문화권 맞춤형 AI·디지털 교육'의 실제적 적용 방안을 모색합니다.</p>
+                                </div>
+                            </div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🤔</span><div><strong>15:40~16:20 (40분): 심화 토론: 미래 교육 환경에서의 문화다양성 교육</strong><p class="text-slate-600 mt-1">AI·디지털 도구의 긍정적/부정적 영향을 분석하고 효과적인 수업 통합 방안을 심층 토론합니다.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🙋</span><div><strong>16:20~16:30 (10분): 질의응답 및 마무리</strong></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
             
-            <div class="bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-4 rounded-r-lg mb-8" role="alert">
-                <p class="font-bold">2022 개정 교육과정 연계 강조점</p>
-                <p class="mt-2 text-sm">'깊이 있는 학습', '교과 간 연계와 통합', '삶과 연계한 학습', '학습과정에 대한 성찰'을 강조하는 2022 개정 교육과정의 취지에 따라, '핵심 아이디어'와 '개념 기반 탐구 수업'을 활용하여 문화다양성 교육을 설계하는 방안을 모색합니다.</p>
-            </div>
-            
-            <h3>교과 연계 안내</h3>
-            <div class="flex flex-wrap gap-2 mb-8">
-              <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 국어 (1-6)</span>
-              <span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 수학 (1-6)</span>
-              <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 바른 생활 (1-2)</span>
-              <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 슬기로운 생활 (1-2)</span>
-              <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 사회 (3-6)</span>
-              <span class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 도덕 (3-6)</span>
-              <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 과학 (3-6)</span>
-              <span class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 실과 (5-6)</span>
-              <span class="bg-pink-100 text-pink-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 체육 (3-6)</span>
-              <span class="bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 음악 (3-6)</span>
-              <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 미술 (3-6)</span>
-              <span class="bg-lime-100 text-lime-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">초등 영어 (3-6)</span>
-            </div>
-            
-            <h3>수업 실습 사례 아이디어</h3>
-            <div class="space-y-4" id="accordion-container">
-                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="accordion-header w-full flex justify-between items-center text-left p-4 bg-white hover:bg-sky-100 focus:outline-none">
-                        <span class="font-semibold text-lg text-slate-800">1-2학년군 (통합교과)</span>
-                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content hidden p-4 bg-white border-t border-gray-200">
-                        <p class="font-bold text-teal-700">'다른 나라 집 구경'</p>
-                        <p class="text-sm text-slate-600 mb-2">초학문적 주제 연계 수업으로, 세계 여러 나라의 주거 문화, 의상, 음식, 놀이 등을 탐색하고 표현하는 활동입니다.</p>
-                        <p class="font-bold text-teal-700 mt-4">'다양한 문화권 친구의 하루' 프로젝트</p>
-                        <p class="text-sm text-slate-600">특정 문화권 친구가 겪을 수 있는 일상생활, 감정, 생각 등을 듣기·말하기, 쓰기, 매체 활동으로 표현하며 공감 능력을 기릅니다. (관련 성취기준: 2국01-01, 2국01-04)</p>
+            <section id="plan3" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button class="accordion-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-2xl font-bold text-teal-800">🤝 계획안 3: 갈등 해결 및 포용적 학교 환경 조성을 위한 문화다양성 교육</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div class="p-6 pt-0">
+                        <h3 class="text-xl font-semibold text-orange-600 mb-6">"편견 없는 학교, 갈등을 넘어 공존으로"</h3>
+                         <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🚨</span><div><strong>14:30~15:00 (30분): 이주배경학생 증가에 따른 현장 문제점 진단</strong><p class="text-slate-600 mt-1">혐오, 차별, 학교폭력 등 현장 문제의 심각성을 공유하고, '모두를 위한 보편적 다양성 교육'의 필요성을 이해합니다.</p>
+                                <div class="emphasis-box">
+                                    <span class="text-2xl">💡</span>
+                                    <p class="font-semibold text-slate-800">'포용 중심 다양성교육 요구'의 시대적 중요성을 인식합니다.</p>
+                                </div>
+                            </div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🎭</span><div><strong>15:00~15:40 (40분): 갈등 관리 및 포용적 수업 실천 사례 공유</strong><p class="text-slate-600 mt-1">'차이 존중 인권존중교육', '차별 없는 통합교육' 사례를 공유하고, 역할극을 통해 갈등 상황 대처를 실습합니다.</p>
+                                <div class="emphasis-box">
+                                    <span class="text-2xl">💡</span>
+                                    <p class="font-semibold text-slate-800">'남부다문화특별지원단'의 컨설팅 사례를 통해 협력적 문제 해결 방안을 탐색합니다.</p>
+                                </div>
+                            </div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🎤</span><div><strong>15:40~16:20 (40분): 패널 토론: 학교 내 갈등을 넘어서는 문화다양성 교육</strong><p class="text-slate-600 mt-1">다문화 밀집학교의 구체적 문제와 해결을 위한 인식 전환, 실질적 지원 방안에 대해 패널 토론을 진행합니다.</p></div></li>
+                            <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🙋</span><div><strong>16:20~16:30 (10분): 질의응답 및 마무리</strong></div></li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="accordion-header w-full flex justify-between items-center text-left p-4 bg-white hover:bg-sky-100 focus:outline-none">
-                        <span class="font-semibold text-lg text-slate-800">3-4학년군 (도덕, 사회, 음악, 미술, 영어)</span>
-                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content hidden p-4 bg-white border-t border-gray-200">
-                        <p class="font-bold text-teal-700">'편견 없는 우리 사회 만들기' 프로젝트</p>
-                        <p class="text-sm text-slate-600 mb-2">도덕과의 '다양성 존중' 성취기준과 연계하여 편견이 발생하는 이유와 해결 방안을 탐색하고, 학교 내에서 실천 가능한 '차이 존중 캠페인'을 기획하여 발표하는 활동입니다.</p>
-                        <p class="font-bold text-teal-700 mt-4">'세계 문화유산 탐험대'</p>
-                        <p class="text-sm text-slate-600">사회과의 지역 이해 및 문화 유산 학습과 연계하여 다양한 문화권의 음악, 미술, 전통 등을 조사하고, 디지털 매체를 활용하여 발표 자료를 제작하는 활동입니다.</p>
+            <section id="plan4" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button class="accordion-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-2xl font-bold text-teal-800">🌍 계획안 4: 감수성 신장 및 세계시민의식 함양을 위한 문화다양성 교육</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div class="p-6 pt-0">
+                        <h3 class="text-xl font-semibold text-orange-600 mb-6">"공존하는 세계시민을 위한 문화다양성 감수성 키우기"</h3>
+                        <ul class="space-y-4">
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🧘</span><div><strong>14:30~15:00 (30분): 문화다양성 감수성 신장의 중요성</strong><p class="text-slate-600 mt-1">감수성 강화와 세계시민의식의 연계성을 설명하고, 교사 스스로의 편견 점검 및 자가 진단 활동을 진행합니다.</p>
+                                <div class="emphasis-box">
+                                    <span class="text-2xl">💡</span>
+                                    <p class="font-semibold text-slate-800">'문화다양성 감수성 강화'와 '공존하는 세계시민의 삶'의 중요성을 강조합니다.</p>
+                                </div>
+                           </div></li>
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">📖</span><div><strong>15:00~15:40 (40분): 감수성 함양 교육 활동 실습</strong><p class="text-slate-600 mt-1">'양성평등교육' 동화 사례, '학생자치 리더십 캠프' 활동 등 감수성 함양을 위한 교육 자료 적용 방안을 실습하고 논의합니다.</p>
+                           </div></li>
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🗣️</span><div><strong>15:40~16:20 (40분): 정책 제안 토론: 학교와 지역사회 연계를 통한 감수성 교육 확대</strong><p class="text-slate-600 mt-1">지역사회 협력기관(영등포구 '다함께 어울림축제' 등)과 연계하여 감수성 교육을 학교 밖으로 확장할 방안을 토론합니다.</p>
+                           </div></li>
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🙋</span><div><strong>16:20~16:30 (10분): 질의응답 및 마무리</strong></div></li>
+                       </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="accordion-header w-full flex justify-between items-center text-left p-4 bg-white hover:bg-sky-100 focus:outline-none">
-                        <span class="font-semibold text-lg text-slate-800">5-6학년군 (사회, 도덕, 실과, 창체)</span>
-                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content hidden p-4 bg-white border-t border-gray-200">
-                        <p class="font-bold text-teal-700">'지구촌 이웃과 공존하기' 역할극 또는 미디어 제작</p>
-                        <p class="text-sm text-slate-600 mb-2">사회과의 '지구촌 사람들' 및 도덕과의 '다양성 존중' 성취기준과 연계하여, 이주 배경 학생 증가 등 실제적인 교실 내 갈등 사례를 바탕으로 상호 이해와 협력적 문제 해결 방안을 모색하는 역할극 또는 영상 제작 활동입니다.</p>
-                        <p class="font-bold text-teal-700 mt-4">'세계인의 식탁 문화 탐방'</p>
-                        <p class="text-sm text-slate-600">실과의 '식재료 생산과 선택의 중요성'과 연계하여 다양한 국가의 음식 문화, 식사 예절, 식재료 등을 조사하고, 간단한 세계 음식을 직접 만들어보며 문화적 차이를 이해하는 실습 활동입니다.</p>
+            <section id="plan5" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button class="accordion-toggle w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-2xl font-bold text-teal-800">🎨 계획안 5: 예술과 역사를 통한 문화다양성 교육 심화</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content max-h-0 overflow-hidden transition-all duration-700 ease-in-out">
+                    <div class="p-6 pt-0">
+                        <h3 class="text-xl font-semibold text-orange-600 mb-6">"예술과 역사로 만나는 다채로운 세상: 문화다양성 융합 교육"</h3>
+                        <ul class="space-y-4">
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🏛️</span><div><strong>14:30~15:00 (30분): 문화다양성 교육의 예술 및 역사적 접근</strong>
+                                <div class="emphasis-box">
+                                    <span class="text-2xl">💡</span>
+                                    <p class="font-semibold text-slate-800">'문화창조와 표현 영역'에 대한 설명을 통해 창의적 접근의 중요성을 강조합니다.</p>
+                                </div>
+                           </div></li>
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🎶</span><div><strong>15:00~15:40 (40분): 예술 및 역사 연계 수업 실천 아이디어 구체화</strong><p class="text-slate-600 mt-1">'다양성 칸타타!', '장소기반 역사교육' 등 예술/역사 연계 수업 아이디어를 공유하고 구체적 활동 계획을 수립합니다.</p>
+                           </div></li>
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🤝</span><div><strong>15:40~16:20 (40분): 문화 간 이해 증진을 위한 융합 교육 토론</strong><p class="text-slate-600 mt-1">융합 교육이 상호 이해와 존중을 증진시키는 방안과 '다양한 언어 활용 종합예술활동' 등 창의적 아이디어에 대해 토론합니다.</p>
+                           </div></li>
+                           <li class="flex items-start"><span class="text-2xl mr-3 mt-1">🙋</span><div><strong>16:20~16:30 (10분): 질의응답 및 마무리</strong></div></li>
+                       </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="effects" class="section-anchor">
-            <h2 class="flex items-center"><span class="mr-3 text-4xl">🌟</span>기대 효과</h2>
-            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="info-card transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 bg-teal-100 rounded-full mr-4">
-                            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                        </div>
-                        <h3 class="mt-0 mb-0">교원 감수성 신장</h3>
-                    </div>
-                    <p class="text-slate-600">연수에 참여한 교원들의 문화다양성 이해 및 감수성을 신장하여 학생들의 다문화 공감 능력 신장에 기여할 수 있습니다.</p>
-                </div>
-                <div class="info-card transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 bg-orange-100 rounded-full mr-4">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.707.707M12 20.25a.25.25 0 01.25.25v.25a.25.25 0 01-.5 0v-.25a.25.25 0 01.25-.25z"></path></svg>
-                        </div>
-                        <h3 class="mt-0 mb-0">교실 적용 역량 강화</h3>
-                    </div>
-                    <p class="text-slate-600">2022 개정 교육과정 연계를 통해 교실에서 문화다양성 교육을 실질적으로 적용할 수 있는 교원의 역량이 강화될 것입니다.</p>
-                </div>
-                <div class="info-card transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center mb-4">
-                         <div class="p-3 bg-sky-100 rounded-full mr-4">
-                            <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm-9 3a2 2 0 100 4 2 2 0 000-4zM19 13a2 2 0 100 4 2 2 0 000-4z"></path></svg>
-                        </div>
-                        <h3 class="mt-0 mb-0">학교 공동체 문화 조성</h3>
-                    </div>
-                    <p class="text-slate-600">교원 간 소통과 협력을 통해 다름을 존중하는 학교 공동체 문화 조성에 기여하고, 미래사회의 공존을 위한 협력적 인성교육 강화에 긍정적인 영향을 미칠 것입니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="schedule" class="section-anchor">
-            <h2 class="flex items-center"><span class="mr-3 text-4xl">📅</span>추진 일정</h2>
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-teal-200 before:to-sky-200">
-                
-                <div class="relative flex items-center space-x-4">
-                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full ring-4 ring-white">
-                        <span class="text-white font-bold">1</span>
-                    </div>
-                    <div class="flex-1 p-4 bg-white rounded-lg shadow-md border border-gray-200">
-                        <p class="text-sm font-semibold text-orange-600">2025년 [월] [초]</p>
-                        <p class="text-lg font-semibold text-slate-800">연수 계획 수립</p>
-                    </div>
-                </div>
-
-                <div class="relative flex items-center space-x-4">
-                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full ring-4 ring-white">
-                        <span class="text-white font-bold">2</span>
-                    </div>
-                    <div class="flex-1 p-4 bg-white rounded-lg shadow-md border border-gray-200">
-                        <p class="text-sm font-semibold text-orange-600">2025년 [월] [중]</p>
-                        <p class="text-lg font-semibold text-slate-800">강사 섭외 및 연수 자료 개발</p>
-                        <p class="text-sm text-slate-600 mt-1">(2022 개정 교육과정 성취기준 및 초학문적 주제 등 고려)</p>
-                    </div>
-                </div>
-
-                <div class="relative flex items-center space-x-4">
-                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-teal-500 rounded-full ring-4 ring-white">
-                        <span class="text-white font-bold">3</span>
-                    </div>
-                    <div class="flex-1 p-4 bg-white rounded-lg shadow-md border border-gray-200">
-                        <p class="text-sm font-semibold text-orange-600">2025년 [월] [말] ~ [월] [초]</p>
-                        <p class="text-lg font-semibold text-slate-800">연수 안내 및 참가자 모집</p>
-                    </div>
-                </div>
-
-                <div class="relative flex items-center space-x-4">
-                    <div class="z-10 flex items-center justify-center w-10 h-10 bg-orange-500 rounded-full ring-4 ring-white">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" /></svg>
-                    </div>
-                    <div class="flex-1 p-4 bg-white rounded-lg shadow-md border border-gray-200">
-                        <p class="text-sm font-semibold text-orange-600">2025년 [월] [일]</p>
-                        <p class="text-lg font-bold text-slate-800">🎉 연수 실시</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+            </section>
+        </div>
     </main>
-    
-    <footer class="text-center py-10 mt-12 bg-slate-100">
-        <p class="text-sm text-slate-600">&copy; 2025 남부교육지원청. All rights reserved.</p>
-    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Navigation Menu Script ---
-            const navMenu = document.getElementById('nav-menu');
-            const mobileNavMenu = document.getElementById('mobile-nav-menu');
-            const sections = document.querySelectorAll('main section');
-            const emojiMap = {
-                'purpose': '🚀', 'basis': '⚖️', 'overview': '🗓️', 'details': '📚', 'effects': '🌟', 'schedule': '📅'
-            };
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- 네비게이션 링크 자동 생성 ---
+            const navLinksContainer = document.getElementById('nav-links');
+            const mobileNavLinksContainer = document.getElementById('mobile-nav-links');
+            const sections = document.querySelectorAll('#accordion-container > section');
+            
+            sections.forEach(section => {
+                const id = section.id;
+                const title = section.querySelector('h2').textContent;
+                const emoji = title.split(' ')[0];
+                const text = title.substring(title.indexOf(' ')).trim().split(':')[0];
 
-            if (sections.length > 0 && navMenu && mobileNavMenu) {
-                sections.forEach(section => {
-                    const id = section.getAttribute('id');
-                    const h2 = section.querySelector('h2');
-                    if (id && h2) {
-                        const title = h2.innerText.replace(emojiMap[id], '').trim();
-                        // PC Nav Item
-                        const pcItem = `<li><a href="#${id}" class="text-slate-700 hover:text-teal-600 transition-colors flex items-center px-3 py-2 rounded-md"><span class="mr-2 text-lg">${emojiMap[id]}</span><span>${title}</span></a></li>`;
-                        navMenu.insertAdjacentHTML('beforeend', pcItem);
-                        // Mobile Nav Item
-                        const mobileItem = `<li><a href="#${id}" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-white hover:bg-teal-500 transition-colors flex items-center"><span class="mr-3 text-xl">${emojiMap[id]}</span><span>${title}</span></a></li>`;
-                        mobileNavMenu.insertAdjacentHTML('beforeend', mobileItem);
-                    }
-                });
-            }
-
-            // Mobile Menu Toggle
+                // 데스크탑 네비게이션
+                const link = document.createElement('a');
+                link.href = `#${id}`;
+                link.textContent = `${emoji} ${text}`;
+                link.className = 'text-slate-700 hover:bg-teal-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium';
+                navLinksContainer.appendChild(link);
+                
+                // 모바일 네비게이션
+                const mobileLink = document.createElement('a');
+                mobileLink.href = `#${id}`;
+                mobileLink.textContent = `${emoji} ${text}`;
+                mobileLink.className = 'text-slate-700 hover:bg-teal-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium';
+                mobileNavLinksContainer.appendChild(mobileLink);
+            });
+            
+            // --- 모바일 메뉴 토글 ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            if(mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-                mobileNavMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // --- 아코디언 기능 ---
+            const accordionToggles = document.querySelectorAll('.accordion-toggle');
 
-            // --- Accordion Script ---
-            const accordionItems = document.querySelectorAll('.accordion-item');
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                const content = item.querySelector('.accordion-content');
-                const icon = header.querySelector('svg');
+            accordionToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const svg = toggle.querySelector('svg');
 
-                header.addEventListener('click', () => {
-                    content.classList.toggle('hidden');
-                    icon.classList.toggle('rotate-180');
+                    // If the content is currently closed
+                    if (content.style.maxHeight === '0px' || !content.style.maxHeight) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        svg.style.transform = 'rotate(180deg)';
+                    } else {
+                        content.style.maxHeight = '0px';
+                        svg.style.transform = 'rotate(0deg)';
+                    }
+                    
+                    // 선택되지 않은 다른 아코디언 닫기 (선택사항)
+                    // accordionToggles.forEach(otherToggle => {
+                    //     if(otherToggle !== toggle) {
+                    //         otherToggle.nextElementSibling.style.maxHeight = '0px';
+                    //         otherToggle.querySelector('svg').style.transform = 'rotate(0deg)';
+                    //     }
+                    // });
                 });
             });
         });
     </script>
+
 </body>
 </html>
